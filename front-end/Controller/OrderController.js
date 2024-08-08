@@ -214,19 +214,19 @@ function setTotal(){
     $('#OrderManage .Total').text(total);
 }
 
-$('#OrderManage .placeOrder').click(function(){
+$('#OrderManage .placeOrder').click( function(){
     let cash = parseFloat($('#OrderManage .Cash').val());
     let total = parseFloat($('#OrderManage .Total').text());
     let discount = parseFloat($('#OrderManage .Discount').val());
 
-    // alert(cash + ' ' + total + ' ' + discount);
-
+    
     if(cash >= total){
+       
         if(discount >= 0 && discount <= 100){
             let subTotal = total - (total * discount / 100);
             $('#OrderManage .SubTotal').text(subTotal.toFixed(2));
             let balance = cash - subTotal;
-            $('#OrderManage .Balance').val(balance.toFixed(2));
+            $('#OrderManage.Cash').val(balance.toFixed(2));
 
             let Order = {
                 orderId : $('#OrderManage .orderId').val(),

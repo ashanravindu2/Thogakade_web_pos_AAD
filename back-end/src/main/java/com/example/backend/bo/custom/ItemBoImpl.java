@@ -59,6 +59,7 @@ public class ItemBoImpl implements ItemBo {
 
     @Override
     public List<ItemDto> getAllItems() throws SQLException {
+        System.out.println("okkom awaaaw");
         List<Item> itemList = itemDao.getAll();
 
         List<ItemDto> itemDtoList = new ArrayList<>();

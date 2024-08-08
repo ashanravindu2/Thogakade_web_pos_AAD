@@ -22,7 +22,7 @@ public class CustomerController extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
-        logger.info("Customer Controller Initiated");
+        logger.info("CustomerController Initiate");
     }
 
     // TODO : Add Customer
@@ -42,21 +42,21 @@ public class CustomerController extends HttpServlet {
            try {
                if (customerBo.addCustomer(customerDto)){
                      resp.setStatus(HttpServletResponse.SC_CREATED);
-                     writer.write("Customer Added Successfully");
-                     logger.info("Customer Added Successfully");
+                     writer.write("Customer Saved Successfully");
+                     logger.info("Customer Saved Successfully");
                }
                else {
                    resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-                   writer.write("Failed to add Customer");
-                     logger.error("Failed to add Customer");
+                   writer.write("Failed to Saved Customer");
+                     logger.error("Failed to Saved Customer");
                }
            } catch (SQLException e) {
-                logger.error("Failed to add Customer");
+                logger.error("Failed to Saved Customer");
                 e.printStackTrace();
            }
 
         }catch (Exception e){
-            logger.error("Failed to add Customer");
+            logger.error("Failed to Saved Customer");
             e.printStackTrace();
         }
     }
@@ -125,6 +125,8 @@ public class CustomerController extends HttpServlet {
         }
     }
 
+
+    //Todo : Update Delete
     @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 

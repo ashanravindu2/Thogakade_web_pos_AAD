@@ -26,7 +26,7 @@ public class ItemController extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
-        logger.info("Item Controller Initiated");
+        logger.info("Item Controller Initiate");
     }
 
     // TODO : Add Item
@@ -129,11 +129,11 @@ public class ItemController extends HttpServlet {
             boolean isDeleted = itemBo.deleteItem(id);
             if (isDeleted){
                 resp.setStatus(HttpServletResponse.SC_CREATED);
-                writer.write("Item Deleted Successfully");
-                logger.info("Item Deleted Successfully");
+                writer.write("Item Remove Successfully");
+                logger.info("Item Remove Successfully");
             }
         } catch (SQLException e) {
-            logger.error("Failed to delete Item");
+            logger.error("Failed to Remove Item");
             e.printStackTrace();
         }
     }

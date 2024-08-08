@@ -30,7 +30,7 @@ public class CustomerBoImpl implements CustomerBo {
     public CustomerDto searchCustomer(String id) throws IOException, SQLException {
         Customer customer = customerDao.getData(id);
         if (customer != null) {
-            System.out.println(customer+"=============================== bo");
+            System.out.println("Awa ykoe");
             return new CustomerDto(customer.getId(), customer.getName(), customer.getAddress(), customer.getSalary());
         } else {
             return null;
@@ -56,6 +56,7 @@ public class CustomerBoImpl implements CustomerBo {
 
     @Override
     public List<CustomerDto> getAllCustomers() throws SQLException {
+        System.out.println("okkom ykoe");
         List<Customer> customerList = customerDao.getAll();
 
         if (customerList != null) {

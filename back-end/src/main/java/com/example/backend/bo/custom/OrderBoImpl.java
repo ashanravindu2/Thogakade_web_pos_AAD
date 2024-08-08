@@ -37,7 +37,7 @@ public class OrderBoImpl implements OrderBo {
         boolean isOrderItemSaved = true;
         connection.setAutoCommit(false);
 
-        // Save order
+        // Save ekata
         isOrderSaved = orderDAO.save(new Order(
                 dto.getId(),
                 dto.getDate(),
@@ -49,7 +49,7 @@ public class OrderBoImpl implements OrderBo {
                 Double.parseDouble(dto.getBalance())
         ));
 
-        // Save order items
+
         if (isOrderSaved) {
             for (ItemDto item : dto.getItems()) {
                 boolean isOrderItemDetailSaved = orderItemDetailDAO.save(new OrderDetails(
@@ -65,8 +65,8 @@ public class OrderBoImpl implements OrderBo {
             }
         }
 
-        // Update item qty
-
+    // itemQty Update ekh
+/////
         boolean itemUpdated = true;
         if (isOrderItemSaved) {
             for (ItemDto item : dto.getItems()) {
