@@ -8,5 +8,5 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface ItemDao extends CrudUtil<Item> {
-
+boolean updateQty(String id, int qty) throws SQLException;
 }

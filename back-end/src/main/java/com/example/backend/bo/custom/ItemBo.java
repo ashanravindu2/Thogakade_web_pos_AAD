@@ -15,4 +15,6 @@ public interface ItemBo extends SuperBO {
     boolean deleteItem(String i) throws SQLException;
 
     List<ItemDto> getAllItems() throws SQLException;
+
+
 }

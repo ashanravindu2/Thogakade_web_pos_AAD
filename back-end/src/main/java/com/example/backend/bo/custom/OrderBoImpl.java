@@ -1,6 +1,7 @@
 package com.example.backend.bo.custom;
 
 import com.example.backend.dao.DAOFactory;
+import com.example.backend.dao.custom.ItemDao;
 import com.example.backend.dao.custom.OrderDao;
 import com.example.backend.dao.custom.OrderDetailDao;
 import com.example.backend.db.ConnectionManager;
@@ -19,9 +20,15 @@ public class OrderBoImpl implements OrderBo {
             (OrderDao) DAOFactory.getInstance()
                     .getDAO(DAOFactory.DAOType.Order);
 
+    ItemDao itemDao =
+            (ItemDao) DAOFactory.getInstance()
+                    .getDAO(DAOFactory.DAOType.ITEM);
+
     OrderDetailDao orderItemDetailDAO =
             (OrderDetailDao) DAOFactory.getInstance()
                     .getDAO(DAOFactory.DAOType.OrderDetail);
+
+
 
     @Override
     public boolean saveOrder(OrderDto dto) throws SQLException {
@@ -58,7 +65,20 @@ public class OrderBoImpl implements OrderBo {
             }
         }
 
-        if (isOrderSaved && isOrderItemSaved) {
+        // Update item qty
+
+        boolean itemUpdated = true;
+        if (isOrderItemSaved) {
+            for (ItemDto item : dto.getItems()) {
+                boolean isUpdated = itemDao.updateQty(item.getId(), item.getQty());
+                if (!isUpdated) {
+                    connection.rollback(); // Rollback transaction on failure
+                    itemUpdated = false;
+                    break;
+                }
+            }
+        }
+        if (isOrderSaved && isOrderItemSaved && itemUpdated) {
             connection.commit();
         } else {
             connection.rollback();

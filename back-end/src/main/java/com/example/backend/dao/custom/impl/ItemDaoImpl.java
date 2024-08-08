@@ -71,4 +71,9 @@ public class ItemDaoImpl implements ItemDao {
         }
         return itemList;
     }
+
+    @Override
+    public boolean updateQty(String id, int qty) throws SQLException {
+        return SQLUtil.execute("UPDATE item SET item_qty = item_qty - ? WHERE item_id=?", qty, id);
+    }
 }

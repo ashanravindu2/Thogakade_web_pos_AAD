@@ -117,7 +117,6 @@ async function refresh() {
 async function generateId() {
 
     let items = await getAllItems();
-    console.log(items,"+++++++++++Mendis");
     if (!items || items.length == 0) {
         $('#ItemManage .itemId').val("I01");
     } else {

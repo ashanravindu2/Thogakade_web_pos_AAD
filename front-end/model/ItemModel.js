@@ -21,22 +21,7 @@ export function saveItem(item) {
 }
 
 export function getAllItems() {
-    // $.ajax({
-    //     url : "http://localhost:8080/item?id=all",
-    //     method : "GET",
-    //     success : function (data){
-    //         let returnData = [];
-    //         data.map((item) => {
-    //             returnData.push({
-    //                 itemId : item.id,
-    //                 itemName : item.name,
-    //                 itemQty : item.qty,
-    //                 itemPrice : item.price
-    //             })
-    //         })
-    //         return returnData;
-    //     }
-    // })
+
 
     return new Promise((resolve, reject) => {
         $.ajax({

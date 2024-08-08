@@ -15,4 +15,6 @@ public interface CustomerDao extends CrudUtil<Customer> {
 //    boolean deleteCustomer(int id) throws SQLException;
 //
 //    List<Customer> getAllCustomers() throws SQLException;
+
+
 }

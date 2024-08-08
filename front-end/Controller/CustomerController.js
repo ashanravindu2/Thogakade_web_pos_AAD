@@ -243,12 +243,4 @@ $('#CustomerManage .tableRow').on('click', 'tr', function(){
     $('#CustomerManage .custSalary').val(price);
 });
 
-// export function loadCustomers(){
-//     getAllCustomers().then((customer) =>{
-//         console.log(customer,"=============================================getAllCustomers");
-//         customer.map((customer) => {
-//             loadTable(customer);
-//         });
-//     })
-// }
 
