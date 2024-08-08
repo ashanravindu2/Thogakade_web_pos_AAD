@@ -8,62 +8,72 @@
     <title>Home Page</title>
 <body>
     <header>
+        <div class="headerIcon">
+            <img src="./assests/img/img/logo.png" alt="">
+        </div>
         <div class="sectionName">
-            Home Page
+           <h1>Dashboard</h1>
+        </div>
+         
+        <div class="page-Icon">
+            <img class="" style="width: 40px;" src="" alt="">
+           
         </div>
 
         <ul>
-            <li><a href="#homePage" class="nav-link">Home</a></li>
-            <li><a href="#CustomerManage" class="nav-link">Customer</a></li>
-            <li><a href="#ItemManage" class="nav-link">Item</a></li>
-            <li><a href="#OrderManage" class="nav-link orderManageBtn">Orders</a></li>
-        </ul>
+            <li><a href="#homePage" class="nav-link"><img src="./assests/img/img/home.png" alt="">Dashboard</a></li>
+            <li><a href="#CustomerManage" class="nav-link"><img src="./assests/img/img/customer.png" alt="">Customer</a></li>
+            <li><a href="#ItemManage" class="nav-link"><img src="./assests/img/img/item.png" alt="">Item</a></li>
+            <li><a href="#OrderManage" class="nav-link orderManageBtn"><img src="./assests/img/img/order.png" alt="">Orders</a></li>
+        </ul> 
     </header>
 
     <section id="homePage" >
+    
         <div>
+            
             <div class="carousel">
                 <div class="carousel-inner">
+                    
                     <div class="carousel-item active">
-                        <img src="https://images.unsplash.com/photo-1578916171728-46686eac8d58?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image 1">
+                        <img src="./assests/img/2IMG.jpg" alt="Image 1">
                     </div>
                     <div class="carousel-item">
-                        <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image 2">
+                        <img src="./assests/img/1IMG.jpg" alt="Image 2">
                     </div>
                     <div class="carousel-item">
-                        <img src="https://images.unsplash.com/photo-1507914372368-b2b085b925a1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image 3">
+                        <img src="./assests/img/3IMG.jpg" alt="Image 3">
                     </div>
                 </div>
                 <button class="carousel-control prev" onclick="prevSlide()">&#10094;</button>
                 <button class="carousel-control next" onclick="nextSlide()">&#10095;</button>
             </div>
-        </div> 
+        </div>
         <div class="counts">
             <div>
                 <div class="orders">
-                    <h1>Orders</h1>
-                    <img src="assests/img/checkout.png" alt="">
-                    <h2>200</h2>
+                    <h1>Orders Count</h1>
+                    <img src="./assests/img/orders.png" alt="">
+                    <h2>0</h2>
                 </div>
                 <div class="customers">
-                    <h1>Customers</h1>
-                    <img src="assests/img/support.png" alt="">
-                    <h2>100</h2>
+                    <h1>Customers Count</h1>
+                    <img src="./assests/img/customer.png" alt="">
+                    <h2>0</h2>
                 </div>
                 <div class="items">
-                    <h1>Items</h1>
-                    <img src="assests/img/product.png" alt="">
-                    <h2>50</h2>
+                    <h1>Items Count</h1>
+                    <img src="./assests/img/item.png" alt="">
+                    <h2>0</h2>
                 </div>
             </div>
         </div>
     </section>
-
     <section id="CustomerManage">
         <div>
 
             <div>
-                <h1 class="title">Customer Registration</h1>
+                
     
                 <form id="customerForm">
                     <div>
@@ -121,7 +131,7 @@
         <div>
 
             <div>
-                <h1 class="title">Item Registration</h1>
+                
     
                 <form action="" class="inputData" id="ItemForm">
                     <div>
@@ -340,72 +350,13 @@ $(document).ready(function(){
                     document.title = "Order Manage";
                     break;
                 default:
-                    $('.sectionName').text('Home Page');
+                    $('.sectionName').text('Dashboard');
                     document.title = "Home Page";
             }
         });
     });
 
 
-
-
-  {
-
-
-    let currentSlide = 0;
-    const slideInterval = 3000; // Change slide every 3 seconds
-    let autoSlide;
-
-    function showSlide(index) {
-        const $slides = $('.carousel-item');
-        const totalSlides = $slides.length;
-
-        if (index >= totalSlides) {
-            currentSlide = 0;
-        } else if (index < 0) {
-            currentSlide = totalSlides - 1;
-        } else {
-            currentSlide = index;
-        }
-
-        const offset = -currentSlide * 100;
-        $('.carousel-inner').css('transform', 'translateX(' + offset + '%)');
-
-        $slides.each(function(i) {
-            $(this).toggleClass('active', i === currentSlide);
-        });
-    }
-
-    function nextSlide() {
-        showSlide(currentSlide + 1);
-    }
-
-    function prevSlide() {
-        showSlide(currentSlide - 1);
-    }
-
-    function startAutoSlide() {
-        autoSlide = setInterval(nextSlide, slideInterval);
-    }
-
-    function stopAutoSlide() {
-        clearInterval(autoSlide);
-    }
-
-    showSlide(currentSlide);
-    startAutoSlide();
-
-    $('.carousel').mouseenter(stopAutoSlide).mouseleave(startAutoSlide);
-
-    $('.prev').click(function() {
-        prevSlide();
-    });
-
-    $('.next').click(function() {
-        nextSlide();
-    });
-
-  }
 
 
 </script>

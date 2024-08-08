@@ -45,6 +45,17 @@ header>.sectionName h1{
     padding-right: 25rem;
 }
 
+div.sectionName{
+   
+    color: #ff9500;
+    font-size: 24px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    display: flex;
+    padding-right: 25rem;
+}
+
+
 header ul{
     list-style: none;
     display: flex;
