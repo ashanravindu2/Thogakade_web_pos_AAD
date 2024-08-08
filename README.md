@@ -9,7 +9,7 @@ Togakade POS System is a web-based Point of Sale (POS) application developed to 
 . Place Orders: Simplify the ordering process with a user-friendly order placement system.
 . Modern UI: Enjoy a sleek and responsive design that works well on various devices.
 ## Built with
-. Front End
+#. Front End
 . HTML
 . CSS
 . Javascript
