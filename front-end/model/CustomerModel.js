@@ -89,11 +89,3 @@ export function deleteCustomer(index){
     })
 
 }
-
-// export function getAllCustomers(){
-//     console.log("=============================================getAllCustomers");
-//     getAllCustomer().then((customer) =>{
-//         console.log(customer,"=============================================getAllCustomers");
-//         return customer;
-//     })
-// }
