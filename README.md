@@ -24,6 +24,7 @@ Togakade POS System is a web-based Point of Sale (POS) application developed to 
 
 ## API Endpoint Documentation
 
-### Customer : http://localhost:8080/backend_war_exploded/customer
-### Item : http://localhost:8080/backend_war_exploded/item
-### order : http://localhost:8080/backend_war_exploded/order
+### Customer : https://documenter.getpostman.com/view/35385633/2sA3s3Fqbm
+### Item : https://documenter.getpostman.com/view/35385633/2sA3s3Fqbn
+### order : https://documenter.getpostman.com/view/35385633/2sA3s3Fqbo
+### Order Detail : https://documenter.getpostman.com/view/35385633/2sA3s3Fqbp
